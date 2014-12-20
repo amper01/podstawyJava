@@ -6,6 +6,23 @@ import java.util.TreeSet;
  */
 
 
+
+class ZadanieZNawiasami {
+    /**
+     * Zadanie: dany jest napis typu "(()()()))((())()"; 
+     * sprawdzić, czy nawiasy w nim są dobrze poukładane, tzn. 
+     * czy dla każdego otwartego nawiasu '(' istnieje odpowiednio
+     * go zamykający nawias ')'.
+     */
+    public void rozwiazanie() {
+        String napis = "(()()()))((())()";
+        //odpowiedź: zły
+        
+    }
+}
+
+
+
 class NaszaKlasa {
     public int sumaCalosci(int x) {
         int a = 15 - (1 + 3 + x);
