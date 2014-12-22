@@ -9,18 +9,49 @@ import java.util.TreeSet;
 
 class ZadanieZNawiasami {
     /**
-     * Zadanie: dany jest napis typu "(()()()))((())()"; 
-     * sprawdzić, czy nawiasy w nim są dobrze poukładane, tzn. 
+     * Zadanie: dany jest napis typu "(()()()))((())()";
+     * sprawdzić, czy nawiasy w nim są dobrze poukładane, tzn.
      * czy dla każdego otwartego nawiasu '(' istnieje odpowiednio
      * go zamykający nawias ')'.
      */
     public void rozwiazanie() {
-        String napis = "(()()()))((())()";
-        //odpowiedź: zły
-        
+        String napis = "(((())))";        //odpowiedź: zły
+        napis.charAt(7);        //znak na pozycji 7 w tym stringu;
+        napis.length();         //liczba znakow w stringu
+//        int otwartychNawiasow = 0;
+//        for (int poz = 0; poz < /*długość napisu*/; poz++) {
+//            //jesli na pozycji poz w napis jest '(' to otwartychNawiasow++
+//            //jesli na pozycji jest ')' to otwartychNawiasow--
+//            //trzeba sprawdzic, czy czasem nie bedzie otwartychNawiasow<0
+//        }
+//        //tu trzeba sprawdzic, czy otwartychNawiasow==0
+//
+        //jesteśmy na pozycji "pp=4", zadanie: znaleźć nawias domykający
+        // ten na pozycji pp
+        int pp = 0;
+        int dx;
+        if (napis.charAt(pp)=='(') dx = 1;
+        else dx = -1;
+        int bilans=dx; //czyli 1 dla ( oraz -1 dla )
+        for(int poz=pp+dx; poz>=0 && poz<napis.length(); poz+=dx) {
+            if (napis.charAt(poz)=='(') bilans++;
+            else bilans--;
+            if (bilans==0) {
+                System.out.println("nawias domknięty na pozycji " + poz);
+                break;
+            }
+        }
+        pierwszy:
+        for (int i = 0; i < 100; i++) {
+            drugi:
+            for (int j = 0; j < 200; j++) {
+                if (i+j % 7 ==0) break drugi;
+                if (i+j % 13==0) break pierwszy;
+            }
+        }
+
     }
 }
-
 
 
 class NaszaKlasa {
