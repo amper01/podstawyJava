@@ -1,0 +1,23 @@
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Created by mareckip on 17.01.15.
+ */
+public class MojeGUI {
+    private JButton button1;
+    private JButton button2;
+    private JPanel mojPanel;
+    private JTextArea textArea1;
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("MojeGUI");
+        MojeGUI instancjaGUI = new MojeGUI();
+        frame.setContentPane(instancjaGUI.mojPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        instancjaGUI.textArea1.append("tekścik");
+        System.out.println(instancjaGUI.textArea1.getText());
+    }
+}
