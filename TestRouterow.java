@@ -5,15 +5,22 @@ import java.io.InputStreamReader;
  * Created by PM on 2015-01-24.
  */
 class SnifferNetowy {
-    public void szukaj() throws Exception{
+    public void szukaj() throws Exception {
+        String komenda = "tracert";
+        String OS = System.getProperty("os.name").toLowerCase();
+        if (OS.indexOf("win")>=0) {
+            komenda = "tracert";
+        } else {
+            komenda = "traceroute";
+        }
         Runtime r = Runtime.getRuntime();
-        Process p = r.exec("tracert google.pl");
+        Process p = r.exec(komenda + " google.pl");
         p.waitFor();
         BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
         String linia = "";
-        while(true) {
+        while (true) {
             linia = br.readLine();
-            if (linia==null) break;
+            if (linia == null) break;
             System.out.println(linia);
         }
     }
